@@ -2,3 +2,67 @@
   text-align: center;
 }
 
+img{
+  width: 250px;
+  height: auto;
+}
+
+.footer_left{
+  margin-left: 20px;
+}
+
+.footer_right{
+  margin-right: 30px;
+}
+
+.logo_container{
+  margin-right: 20px;
+}
+.Contact_image img{
+  width: 800px;
+  margin-top: 20px;
+}
+
+.all_contact{
+  margin-top: 30px;
+}
+
+.contact_message{
+  font-size: 2rem;
+}
+
+.contact_component{
+  display: flex;
+}
+.message_component input{
+  width: 400px;
+  height: 100px;
+}
+
+.Name_Email{
+  display: grid;
+}
+
+.Name_Email input{
+  width: 400px;
+  height: 40px;
+  margin-left: 240px;
+  margin-right: 30px;
+}
+
+.Name_Email .email{
+  margin-top: 20px;
+}
+
+.submit_component{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.submit_component button{
+  width: 120px;
+}
+
+.About_container{
+  width: 800px;
+  margin-left: 250px;
+}
