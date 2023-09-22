@@ -1,53 +1,82 @@
-
 import React, { useState } from "react";
-import Datetime from "react-datetime";
-import "react-datetime/css/react-datetime.css";
+import DateTime from "react-datetime";
+import moment from "moment";
+import axios from "axios"
 
 function ControlEvent() {
-  const [evant, setEvant] = useState("");
-  const [start, setStart] = useState(new Date());
-  const [end, setEnd] = useState(new Date());
-  const [location, setLocation] = useState("");
-  const [note, setNote] = useState("");
+  const [eventInput, setEventInput] = useState({
+    title: "",
+    start: new Date(),
+    end: new Date(),
+    location: "",
+    note: "",
+  });
 
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log({
-      evant,
-      start,
-      end
-    })
+  const InputChange = (e) => {
+    const { name, value } = e.target;
+    setEventInput({ ...eventInput, [name]: value });
   };
+  const StartDateChange = (start) => {
+    setEventInput({ ...eventInput, start });
+  };
+  const EndDateChange = (end) => {
+    setEventInput({ ...eventInput, end });
+  };
+  const AddEvent = async (e) => {
+    e.preventDefault();
+    try {
+          await axios.post("http://localhost:5000/api/events/details", {
+            title: eventInput.title,
+            start: moment(eventInput.start).toDate(),
+            end: moment(eventInput.end).toDate(),
+            location: eventInput.location,
+            note: eventInput.note,
+      });
 
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div>
-      <form action=" POST" onSubmit={onSubmit}>
+      <div>
+        <label>Event Name:</label>
         <input
-          placeholder="Evant Name"
-          value={evant}
-          onChange={(e) => setEvant(e.target.value)}
+          type="text"
+          name="title"
+          value={eventInput.title}
+          onChange={InputChange}
         />
-        <div>
-          <Datetime value={start} onChange={(Date) => setStart(Date)} />
-        </div>
-        <div>
-          <Datetime value={end} onChange={(Date) => setEnd(Date)} />
-        </div>
-
+        <label>Start Date and Time:</label>
+        <DateTime
+          name="start"
+          onChange={StartDateChange}
+          value={eventInput.start}
+        />
+      </div>
+      <div>
+        <label>End Date and Time:</label>
+        <DateTime name="end" onChange={EndDateChange} value={eventInput.end} />
+      </div>
+      <div></div>
+      <div>
+        <label>Location:</label>
         <input
-          placeholder="Location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
+          type="text"
+          name="location"
+          value={eventInput.location}
+          onChange={InputChange}
         />
+        <label>Event Description:</label>
         <input
-          placeholder="Note"
-          value={note}
-          onChange={(e) => setNote(e.target.value)}
+          type="text"
+          name="note"
+          value={eventInput.note}
+          onChange={InputChange}
         />
-        <button type="Submit">Add Evant</button>
-      </form>
+      </div>
+      <button onClick={AddEvent}>Add Event</button>
     </div>
   );
 }

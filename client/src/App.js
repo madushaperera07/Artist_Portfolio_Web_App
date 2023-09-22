@@ -7,6 +7,7 @@ import Events from "./Components/Events";
 import Admin from "./Components/Admin";
 import SeeContact from "./Components/SeeContact";
 import ControlEvent from "./Components/ControlEvent";
+import "react-datetime/css/react-datetime.css";
 
 function App() {
   return (
