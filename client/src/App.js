@@ -8,6 +8,8 @@ import Admin from "./Components/Admin";
 import SeeContact from "./Components/SeeContact";
 import ControlEvent from "./Components/ControlEvent";
 import "react-datetime/css/react-datetime.css";
+import ListEvents from "./Components/ListEvents";
+import CurdEvents from "./Components/CurdEvents";
 
 function App() {
   return (
@@ -26,6 +28,14 @@ function App() {
           <Route
             path="/Control/Admin/Page/ControlEvant"
             element={<ControlEvent />}
+          />
+          <Route
+            path="/Control/Admin/Page/ControlEvant/List"
+            element={<ListEvents/>}
+          />
+          <Route
+            path="/Control/Admin/Page/ControlEvant/ChangeEvents/:id"
+            element={<CurdEvents />}
           />
         </Routes>
       </BrowserRouter>

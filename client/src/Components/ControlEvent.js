@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DateTime from "react-datetime";
 import moment from "moment";
 import axios from "axios"
+import { Link } from "react-router-dom";
 
 function ControlEvent() {
   const [eventInput, setEventInput] = useState({
@@ -39,44 +40,56 @@ function ControlEvent() {
   };
 
   return (
-    <div>
+    <div className="All_event">
+      
+    <div className="event_container">
+    <h2>Add Events</h2>
       <div>
-        <label>Event Name:</label>
-        <input
+        
+        <input className="input_content" placeholder="Event Name"
           type="text"
           name="title"
           value={eventInput.title}
           onChange={InputChange}
         />
+        </div>
+        <div>
         <label>Start Date and Time:</label>
-        <DateTime
+        <DateTime className="dataFix"
           name="start"
           onChange={StartDateChange}
           value={eventInput.start}
         />
-      </div>
+        </div>
+        
+      
       <div>
         <label>End Date and Time:</label>
-        <DateTime name="end" onChange={EndDateChange} value={eventInput.end} />
+        <DateTime className="dataFix" name="end" onChange={EndDateChange} value={eventInput.end} />
       </div>
-      <div></div>
       <div>
-        <label>Location:</label>
-        <input
+        
+        <input className="input_content" placeholder="Location"
           type="text"
           name="location"
           value={eventInput.location}
           onChange={InputChange}
         />
-        <label>Event Description:</label>
-        <input
+      </div>
+      <div>
+        
+        <input className="input_content" placeholder="Event Description"
           type="text"
           name="note"
           value={eventInput.note}
           onChange={InputChange}
         />
       </div>
-      <button onClick={AddEvent}>Add Event</button>
+      <button class="btn btn-success rounded-pill px-3 button_containe" onClick={AddEvent}>Add Event</button>
+      <div>
+        <Link className="deco_link" to="/Control/Admin/Page/ControlEvant/List">List Events</Link>
+      </div>
+    </div>
     </div>
   );
 }

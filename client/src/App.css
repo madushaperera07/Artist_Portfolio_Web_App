@@ -66,3 +66,100 @@ img{
   width: 800px;
   margin-left: 250px;
 }
+
+.list-header{
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+th, td {
+  border: 1px solid black;
+  font-family: 'Courier New', Courier, monospace;
+  border-collapse: separate;
+  padding: 0.3rem 4rem 0.3rem 4rem;
+
+}
+
+.All_event{
+  margin-top: 30px;
+  width: 100%;
+  height: 600px;
+  background-image: url("./Gallery/background.jpg");
+  background-size: cover;
+  color: aliceblue;
+}
+
+.event_container{
+  width: 500px;
+}
+
+.dataFix{
+  width: 200px;
+  margin-left: 160px;
+  margin-top: 10px;
+}
+
+.input_content{
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button_containe{
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.deco_link{
+  text-decoration: none;
+  color: aliceblue;
+  font-weight: 700;
+  border: 2px solid wheat;
+  padding: 3px 7px 3px 7px;
+}
+
+.deco_link:hover{
+  color: cornflowerblue;
+  text-decoration: underline;
+}
+
+
+.home-page{
+	line-height: 1.5;
+	min-height: 20rem;
+	padding-left: 10rem;
+	padding-right: 10rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	margin: 5rem;
+}
+
+.link{
+  color: inherit;
+  text-decoration: none;
+  transition: .25s ease;
+}
+
+div .home-page{
+display: flex;
+flex-wrap: wrap;
+
+.link-container {
+  margin-left: .75em;
+  margin-right: .75em;
+}
+
+&:hover {
+.link {
+    color: #CCC;
+    &:hover {
+      color: #000;
+      box-shadow: 0 3px 0 0 currentcolor;
+    }
+  }
+}
+}

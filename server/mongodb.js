@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/saveData', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(()=>console.log("Database Connected"))
+}).then(()=>console.log("Database Connected 01"))
 .catch(()=>console.log("error"))
 
 const eventSchema = new mongoose.Schema({
