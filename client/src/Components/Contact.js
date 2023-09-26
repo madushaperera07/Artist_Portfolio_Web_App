@@ -21,7 +21,31 @@ function Contact() {
     } catch (error) {
       console.error(error);
     }
+
+    setFullname((pre)=>{
+      if(pre.length>1){
+        return ""
+      }else{
+        return pre
+      }
+    })
+
+    setEmail((pre)=>{
+      if(pre.length>1){
+        return ""
+      }else{
+        return pre
+      }
+    })
     
+    setMessage((pre)=>{
+      if(pre.length>1){
+        return ""
+      }else{
+        return pre
+      }
+    })
+    alert("Message Sent Succusfully")
   }
 
 

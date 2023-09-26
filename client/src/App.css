@@ -163,3 +163,37 @@ flex-wrap: wrap;
   }
 }
 }
+
+@media (max-width: 768px){
+  .About_container{
+    width: 500px;
+    margin-left: 100px;
+  }
+  .contact_component{
+    display: grid;
+  }
+  .Name_Email{
+    margin-left: -80px;
+  }
+  .message_component{
+    margin-left: -20px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px){
+  .About_container{
+    width: 400px;
+    margin-left: 20px;
+  }
+  .contact_component{
+    display: grid;
+  }
+  .Name_Email{
+    margin-left: -200px;
+  }
+  .message_component{
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}

@@ -44,6 +44,28 @@ const updateData=(e)=>{
   }).then(
     res=> console.log(res)
   ).catch(err=>console.log(err))
+
+  setTitle((pre) => {
+    if (pre.length > 1) {
+      return "";
+    } else {
+      return pre;
+    }
+  });
+  setLocation((pre) => {
+    if (pre.length > 1) {
+      return "";
+    } else {
+      return pre;
+    }
+  });
+  setNote((pre) => {
+    if (pre.length > 1) {
+      return "";
+    } else {
+      return pre;
+    }
+  });
 }
 
   return (
